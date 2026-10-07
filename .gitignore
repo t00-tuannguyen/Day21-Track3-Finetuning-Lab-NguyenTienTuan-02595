@@ -37,3 +37,7 @@ hf_cache/
 .idea/
 .vscode/
 *.swp
+
+# Downloaded Colab runs (kept locally, one folder per corpus)
+runs/
+*.zip
