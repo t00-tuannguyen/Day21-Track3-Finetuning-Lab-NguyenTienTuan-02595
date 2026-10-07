@@ -60,8 +60,8 @@ def score_run(model, tok, system_prompt, label):
     preds, lat = generate.generate_batch(model, tok, prompts, system=system_prompt,
                                          label=f"{label}/target")
 
-    tgt = sum(ev.triage_field_accuracy(p, r["label"]) for p, r in zip(preds, target)) / len(target)
-    fmt = sum(ev.has_required_keys(p, ev.TRIAGE_KEYS) for p in preds) / len(preds)
+    tgt = sum(ev.target_score(p, r["label"]) for p, r in zip(preds, target)) / len(target)
+    fmt = sum(ev.format_score(p) for p in preds) / len(preds)
 
     rprompts = [r["instruction"] for r in regression]
     rpreds, _ = generate.generate_batch(model, tok, rprompts, system=None, max_new_tokens=96,
@@ -96,6 +96,9 @@ frozen = {
     "smoke_mode": bool(EVAL_LIMIT),
 }
 report.write_json(frozen, "baselines_frozen.json", results_dir=ROOT / "results")
+# Raw baseline outputs, so NB5's qualitative table can put (b) next to the fine-tune on
+# the same ticket instead of showing the fine-tune alone.
+report.write_json({"a": preds_a, "b": preds_b}, "baseline_preds.json", results_dir=ROOT / "results")
 print(json.dumps(frozen, ensure_ascii=False, indent=2))
 
 # %% [markdown]

@@ -152,6 +152,71 @@ def triage_field_accuracy(pred: str, label: dict, keys: list[str] | None = None)
     return hits / len(keys)
 
 
+# --- UIT-ViSFD: aspect-based sentiment (B2 custom corpus) -------------------
+# Output contract: a JSON object whose keys are ONLY the aspects the review mentions,
+# each mapped to a polarity. Unlike triage there is no fixed key set, so scoring is
+# F1 over (aspect, polarity) pairs: a fixed 10-key "none"-filled schema would hand out
+# ~70% accuracy for predicting nothing, and baseline (b) would look strong for free.
+
+VISFD_ASPECTS = ["screen", "camera", "features", "battery", "performance",
+                 "storage", "design", "price", "general", "ser_acc"]
+VISFD_POLARITIES = ["positive", "negative", "neutral"]
+
+
+def _aspect_pairs(obj) -> set[tuple[str, str]]:
+    if not isinstance(obj, dict):
+        return set()
+    return {(str(k).strip().lower(), str(v).strip().lower()) for k, v in obj.items()}
+
+
+def aspect_f1(pred: str, label: dict) -> float:
+    """Target-task scorer for ViSFD: F1 between predicted and gold (aspect, polarity) pairs.
+
+    An aspect with the wrong polarity counts as both a false positive and a false
+    negative -- detecting "battery" but calling it positive when the user hates it is
+    not half right for anyone reading the dashboard.
+    """
+    gold = _aspect_pairs(label)
+    got = _aspect_pairs(_parse_json_loose(pred))
+    if not gold and not got:
+        return 1.0
+    tp = len(gold & got)
+    if tp == 0:
+        return 0.0
+    precision, recall = tp / len(got), tp / len(gold)
+    return 2 * precision * recall / (precision + recall)
+
+
+def aspect_format(pred: str) -> float:
+    """Format compliance for ViSFD: fraction of emitted entries that obey the contract
+    (known aspect key, known polarity value). Non-JSON or an empty object scores 0."""
+    obj = _parse_json_loose(pred)
+    if not isinstance(obj, dict) or not obj:
+        return 0.0
+    ok = sum(1 for k, v in obj.items()
+             if str(k).strip().lower() in VISFD_ASPECTS
+             and str(v).strip().lower() in VISFD_POLARITIES)
+    return ok / len(obj)
+
+
+# --- task dispatch ----------------------------------------------------------
+# Notebooks call these two, never a task-specific scorer, so swapping the corpus cannot
+# leave one notebook scoring the old task. Same switch as the prompts (config.TASK).
+
+def target_score(pred: str, label: dict, task: str | None = None) -> float:
+    from .config import TASK
+    if (task or TASK) == "visfd":
+        return aspect_f1(pred, label)
+    return triage_field_accuracy(pred, label)
+
+
+def format_score(pred: str, task: str | None = None) -> float:
+    from .config import TASK
+    if (task or TASK) == "visfd":
+        return aspect_format(pred)
+    return has_required_keys(pred, TRIAGE_KEYS)
+
+
 # --- aggregation ------------------------------------------------------------
 
 @dataclass

@@ -14,7 +14,7 @@ __pycache__/
 adapters/*/
 !adapters/.gitkeep
 data/split/
-data/CUSTOM_DATASET.md
+data/raw/
 results/*.json
 results/*.csv
 !results/.gitkeep

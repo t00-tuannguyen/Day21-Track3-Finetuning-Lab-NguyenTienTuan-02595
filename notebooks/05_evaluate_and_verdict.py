@@ -67,8 +67,8 @@ def score_adapter(adapter_dir: pathlib.Path, system_prompt: str | None, *,
 
     preds, lat = generate.generate_batch(
         model, tok, [r["input"] for r in target], system=system_prompt, label=f"{label}/target")
-    tgt = sum(ev.triage_field_accuracy(p, r["label"]) for p, r in zip(preds, target)) / len(target)
-    fmt = sum(ev.has_required_keys(p, ev.TRIAGE_KEYS) for p in preds) / len(preds)
+    tgt = sum(ev.target_score(p, r["label"]) for p, r in zip(preds, target)) / len(target)
+    fmt = sum(ev.format_score(p) for p in preds) / len(preds)
 
     # The contrasts are scored on target/format only: the graded 4-group verdict is about
     # `correct`, and the regression pass is a second full generation sweep per adapter.
@@ -186,16 +186,30 @@ report.write_json(autopsy, "autopsy.json", results_dir=ROOT / "results")
 # cherry-pick và bị trừ điểm ở mục Evaluation Quality.
 
 # %%
+# NB2 saved baseline (b)'s raw outputs; with them each row shows (b) vs the fine-tune on
+# the same ticket, and "FT thua" means "scored below (b)", not just "scored low".
+_bp = ROOT / "results" / "baseline_preds.json"
+preds_b = json.loads(_bp.read_text(encoding="utf-8"))["b"] if _bp.exists() else [None] * len(target)
+
 rows = []
-for i, (p, r) in enumerate(zip(preds_ft, target)):
-    s_ft = ev.triage_field_accuracy(p, r["label"])
-    rows.append({"i": i, "ticket": r["input"][:70], "ft_score": round(s_ft, 2),
-                 "ft_pred": p.replace("\n", " ")[:90]})
-rows.sort(key=lambda x: x["ft_score"])
-print("--- 3 ca TỆ NHẤT (bắt buộc đưa vào report) ---")
-print(report.markdown_table(rows[:3], ["i", "ticket", "ft_score", "ft_pred"]))
-print("\n--- 3 ca TỐT NHẤT ---")
-print(report.markdown_table(rows[-3:], ["i", "ticket", "ft_score", "ft_pred"]))
+for i, (p, pb, r) in enumerate(zip(preds_ft, preds_b, target)):
+    s_ft = ev.target_score(p, r["label"])
+    row = {"i": i, "ticket": r["input"][:70], "label": json.dumps(r["label"], ensure_ascii=False),
+           "ft_score": round(s_ft, 2), "ft_pred": p.replace("\n", " ")[:90]}
+    if pb is not None:
+        s_b = ev.target_score(pb, r["label"])
+        row.update({"b_score": round(s_b, 2), "b_pred": pb.replace("\n", " ")[:90],
+                    "ft_minus_b": round(s_ft - s_b, 2)})
+    rows.append(row)
+
+key = "ft_minus_b" if preds_b[0] is not None else "ft_score"
+cols = ["i", "ticket", "b_score", "ft_score", "ft_pred"] if key == "ft_minus_b" else \
+       ["i", "ticket", "ft_score", "ft_pred"]
+rows.sort(key=lambda x: x[key])
+print(f"--- 3 ca FT THUA nặng nhất (xếp theo {key}; bắt buộc đưa vào report) ---")
+print(report.markdown_table(rows[:3], cols))
+print("\n--- 3 ca FT THẮNG rõ nhất ---")
+print(report.markdown_table(rows[-3:], cols))
 report.write_json(rows, "qualitative.json", results_dir=ROOT / "results")
 
 # %% [markdown]

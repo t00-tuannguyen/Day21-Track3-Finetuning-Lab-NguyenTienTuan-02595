@@ -11,6 +11,7 @@ assumes. That is the opposite of the 2024-era lab this replaces.
 from __future__ import annotations
 
 import os
+import pathlib
 from dataclasses import dataclass, field, replace
 
 
@@ -161,13 +162,37 @@ SPECS: dict[str, LoraSpec] = {
 }
 
 
+# --- task ---------------------------------------------------------------------------
+# The lab ships one task (`triage`: CSKH ticket -> 4-field JSON). B2 lets a student swap
+# in their own corpus; `visfd` is UIT-ViSFD smartphone reviews -> aspect-sentiment JSON
+# (see data/CUSTOM_DATASET.md). The active task decides the prompts here and the scorer
+# in `evaluate.target_score` -- one switch, so training, baselines and the fine-tune can
+# never disagree about which task they are on.
+#
+# Resolution: $LAB_TASK, else the one-word file `data/TASK` (committed alongside a
+# custom corpus so a fresh Colab clone picks it up), else `triage`.
+TASKS = ("triage", "visfd")
+
+
+def get_task() -> str:
+    task = os.environ.get("LAB_TASK", "").strip().lower()
+    if not task:
+        marker = pathlib.Path(__file__).resolve().parents[2] / "data" / "TASK"
+        task = marker.read_text(encoding="utf-8").strip().lower() if marker.exists() else "triage"
+    if task not in TASKS:
+        raise ValueError(f"Unknown LAB_TASK={task!r}. Pick one of: {', '.join(TASKS)}")
+    return task
+
+
+TASK = get_task()
+
 # --- prompts -----------------------------------------------------------------------
 # These live here, not in generate.py, because BOTH training and evaluation need them
 # and holding two copies is how F-31 happened: the lab trained on one prompt shape and
 # scored on another, and every adapter came out at target=0.000.
-NAIVE_PROMPT = "Phân loại ticket sau."
+TRIAGE_NAIVE_PROMPT = "Phân loại ticket sau."
 
-OPTIMIZED_PROMPT = """Bạn là hệ thống phân loại ticket CSKH. Trả về DUY NHẤT một object JSON, không kèm giải thích, không kèm markdown fence.
+TRIAGE_OPTIMIZED_PROMPT = """Bạn là hệ thống phân loại ticket CSKH. Trả về DUY NHẤT một object JSON, không kèm giải thích, không kèm markdown fence.
 
 Schema bắt buộc — đúng 4 khóa:
 {"intent": ..., "urgency": ..., "product": ..., "sentiment": ...}
@@ -180,6 +205,41 @@ product   = tên sản phẩm xuất hiện nguyên văn trong ticket
 Ví dụ:
 Ticket: "Shop ơi, mình đặt bàn phím cơ mã đơn DH123456. Giao hàng chậm. Đã 3 ngày rồi. Nhờ shop kiểm tra."
 JSON: {"intent": "van_chuyen", "urgency": "trung_binh", "product": "bàn phím cơ", "sentiment": "trung_tinh"}"""
+
+VISFD_NAIVE_PROMPT = "Phân tích đánh giá sản phẩm sau."
+
+# Written BEFORE any baseline was measured. The few-shot examples are invented, not
+# drawn from the ViSFD train or test split, so they cannot leak an eval item.
+VISFD_OPTIMIZED_PROMPT = """Bạn là hệ thống phân tích cảm xúc theo khía cạnh (aspect-based sentiment) cho bình luận về điện thoại trên sàn thương mại điện tử. Trả về DUY NHẤT một object JSON, không kèm giải thích, không kèm markdown fence.
+
+Khóa = khía cạnh ĐƯỢC NHẮC TỚI trong bình luận (chỉ ghi khía cạnh có nhắc tới, bỏ qua khía cạnh không nhắc). Giá trị = positive | negative | neutral.
+
+Các khía cạnh hợp lệ:
+- screen: màn hình (độ sáng, màu, cảm ứng, kích thước màn)
+- camera: chụp ảnh, quay phim, camera trước/sau
+- features: tính năng (vân tay, face ID, wifi, sóng, loa, cảm biến, phần mềm)
+- battery: pin, sạc, thời lượng dùng
+- performance: hiệu năng, tốc độ, mượt/lag, chơi game, nóng máy
+- storage: bộ nhớ trong, dung lượng, thẻ nhớ
+- design: thiết kế, ngoại hình, màu sắc máy, cầm nắm
+- price: giá cả
+- general: nhận xét chung về máy (ổn, tốt, tệ, đáng mua...)
+- ser_acc: dịch vụ, nhân viên, cửa hàng, giao hàng, bảo hành, phụ kiện
+
+neutral = có nhắc tới nhưng không khen không chê rõ ràng (hoặc vừa khen vừa chê như nhau).
+
+Ví dụ:
+Bình luận: "Máy chạy mượt, pin trâu dùng cả ngày, nhưng camera chụp đêm hơi mờ. Nhân viên tư vấn nhiệt tình."
+JSON: {"performance": "positive", "battery": "positive", "camera": "negative", "ser_acc": "positive"}
+
+Bình luận: "Giá hơi cao so với cấu hình. Nói chung cũng tạm được."
+JSON: {"price": "negative", "general": "neutral"}"""
+
+_PROMPTS = {
+    "triage": (TRIAGE_NAIVE_PROMPT, TRIAGE_OPTIMIZED_PROMPT),
+    "visfd": (VISFD_NAIVE_PROMPT, VISFD_OPTIMIZED_PROMPT),
+}
+NAIVE_PROMPT, OPTIMIZED_PROMPT = _PROMPTS[TASK]
 
 
 CONTRAST_KEYS = ["attn_only", "wrong_lr", "qlora"]

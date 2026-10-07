@@ -1,0 +1,61 @@
+{
+  "source": "https://huggingface.co/datasets/visolex/ViSFD/resolve/main/ViSFD.csv",
+  "seed": 42,
+  "n_train": 250,
+  "n_eval": 50,
+  "pool_sizes": {
+    "train": 7045,
+    "test": 2008
+  },
+  "filters": {
+    "test: length out of range": 180,
+    "test: no polarity-bearing aspect": 36,
+    "train: exact duplicate": 8,
+    "train: length out of range": 620,
+    "train: no polarity-bearing aspect": 113
+  },
+  "sha256_16": {
+    "train_seed.jsonl": "4b9db7f563779ebd",
+    "eval_target.jsonl": "ae103cf33949be65"
+  },
+  "train": {
+    "aspects": {
+      "general": 152,
+      "performance": 133,
+      "battery": 115,
+      "features": 84,
+      "camera": 69,
+      "price": 68,
+      "ser_acc": 66,
+      "design": 40,
+      "screen": 30,
+      "storage": 3
+    },
+    "polarities": {
+      "positive": 437,
+      "negative": 217,
+      "neutral": 106
+    },
+    "mean_aspects_per_item": 3.04
+  },
+  "eval": {
+    "aspects": {
+      "general": 31,
+      "battery": 24,
+      "performance": 23,
+      "ser_acc": 13,
+      "features": 12,
+      "camera": 9,
+      "screen": 9,
+      "design": 7,
+      "price": 6,
+      "storage": 1
+    },
+    "polarities": {
+      "positive": 83,
+      "negative": 39,
+      "neutral": 13
+    },
+    "mean_aspects_per_item": 2.7
+  }
+}
