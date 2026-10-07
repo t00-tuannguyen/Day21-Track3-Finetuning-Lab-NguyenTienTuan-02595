@@ -41,7 +41,7 @@ model, tok = generate.load_base(TIER)
 model = PeftModel.from_pretrained(model, str(ROOT / "adapters" / "correct"))
 preds, _ = generate.generate_batch(model, tok, [r["input"] for r in target],
                                    system=generate.NAIVE_PROMPT)
-before = sum(ev.triage_field_accuracy(p, r["label"]) for p, r in zip(preds, target)) / len(target)
+before = sum(ev.target_score(p, r["label"]) for p, r in zip(preds, target)) / len(target)
 print(f"trước merge: {before:.4f}")
 
 # %% [markdown]
@@ -54,7 +54,7 @@ print(f"trước merge: {before:.4f}")
 merged = model.merge_and_unload()
 preds_m, _ = generate.generate_batch(merged, tok, [r["input"] for r in target],
                                      system=generate.NAIVE_PROMPT)
-after = sum(ev.triage_field_accuracy(p, r["label"]) for p, r in zip(preds_m, target)) / len(target)
+after = sum(ev.target_score(p, r["label"]) for p, r in zip(preds_m, target)) / len(target)
 delta = after - before
 print(f"sau merge:   {after:.4f}   (Δ {delta:+.4f})")
 

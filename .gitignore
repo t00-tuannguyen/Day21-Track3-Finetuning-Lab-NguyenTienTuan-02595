@@ -14,7 +14,7 @@ __pycache__/
 adapters/*/
 !adapters/.gitkeep
 data/split/
-data/CUSTOM_DATASET.md
+data/raw/
 results/*.json
 results/*.csv
 !results/.gitkeep
@@ -37,3 +37,7 @@ hf_cache/
 .idea/
 .vscode/
 *.swp
+
+# Downloaded Colab runs (kept locally, one folder per corpus)
+runs/
+*.zip

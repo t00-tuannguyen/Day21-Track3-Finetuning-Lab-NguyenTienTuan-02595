@@ -1,0 +1,502 @@
+[
+  {
+    "i": 9,
+    "ticket": "Không còn gì tuyệt vời hơn khi pin iphone 7 tuột nhanh bá đạo trong tầ",
+    "label": "{\"screen\": \"negative\", \"features\": \"negative\", \"battery\": \"negative\", \"price\": \"neutral\"}",
+    "ft_score": 0.0,
+    "ft_pred": "{\"battery\": \"positive\", \"price\": \"positive\", \"ser_acc\": \"negative\", \"ser_gen\": \"negative\"}",
+    "b_score": 0.86,
+    "b_pred": "{\"battery\": \"negative\", \"screen\": \"negative\", \"features\": \"negative\"}",
+    "ft_minus_b": -0.86
+  },
+  {
+    "i": 32,
+    "ticket": "Hơn chục triệu mà mặt lưng nhựa, chả bằng con Bphone3 7 triệu cũng có ",
+    "label": "{\"design\": \"negative\", \"price\": \"neutral\"}",
+    "ft_score": 0.0,
+    "ft_pred": "{\"screen\": \"neutral\", \"price\": \"negative\", \"general\": \"negative\"}",
+    "b_score": 0.67,
+    "b_pred": "{\"design\": \"negative\"}",
+    "ft_minus_b": -0.67
+  },
+  {
+    "i": 47,
+    "ticket": "Sau hơn 3 tuần sử dụng Xiaomi note 9s thì Tôi không thể gửi được tin n",
+    "label": "{\"features\": \"negative\", \"ser_acc\": \"neutral\"}",
+    "ft_score": 0.0,
+    "ft_pred": "{\"camera\": \"neutral\", \"battery\": \"neutral\", \"performance\": \"neutral\", \"general\": \"negative",
+    "b_score": 0.67,
+    "b_pred": "{\"ser_acc\": \"neutral\"}",
+    "ft_minus_b": -0.67
+  },
+  {
+    "i": 30,
+    "ticket": "Máy mới mua về chưa ổn định nên có tình trạng mau hết pin nóng máy sau",
+    "label": "{\"battery\": \"neutral\", \"general\": \"positive\"}",
+    "ft_score": 0.4,
+    "ft_pred": "{\"battery\": \"positive\", \"performance\": \"neutral\", \"general\": \"positive\"}",
+    "b_score": 0.8,
+    "b_pred": "{\"battery\": \"neutral\", \"performance\": \"neutral\", \"general\": \"positive\"}",
+    "ft_minus_b": -0.4
+  },
+  {
+    "i": 29,
+    "ticket": "Ưu điểm : pin trâu Nhược điểm: Sạc lâu cảm ứng chậm Vào game liên quân",
+    "label": "{\"features\": \"negative\", \"battery\": \"neutral\", \"performance\": \"negative\"}",
+    "ft_score": 0.29,
+    "ft_pred": "{\"battery\": \"positive\", \"performance\": \"negative\", \"ser_acc\": \"negative\", \"general\": \"neut",
+    "b_score": 0.67,
+    "b_pred": "{\"battery\": \"positive\", \"features\": \"negative\", \"performance\": \"negative\"}",
+    "ft_minus_b": -0.38
+  },
+  {
+    "i": 10,
+    "ticket": "Mới hốt em nó Nhưng tiếc là màn hình TFT Chụp hình camera trước trắng ",
+    "label": "{\"screen\": \"negative\", \"camera\": \"negative\", \"design\": \"positive\"}",
+    "ft_score": 0.33,
+    "ft_pred": "{\"camera\": \"negative\", \"display\": \"negative\", \"price\": \"positive\"}",
+    "b_score": 0.67,
+    "b_pred": "{\"screen\": \"negative\", \"camera\": \"negative\", \"price\": \"positive\"}",
+    "ft_minus_b": -0.33
+  },
+  {
+    "i": 46,
+    "ticket": "Chán con 9s này thật sụ luôn. Cứ gọi đi hay ai gọi tới đen xì màn hình",
+    "label": "{\"features\": \"negative\", \"performance\": \"negative\", \"general\": \"negative\"}",
+    "ft_score": 0.33,
+    "ft_pred": "{\"battery\": \"negative\", \"performance\": \"negative\", \"ser_acc\": \"negative\"}",
+    "b_score": 0.67,
+    "b_pred": "{\"screen\": \"negative\", \"performance\": \"negative\", \"general\": \"negative\"}",
+    "ft_minus_b": -0.33
+  },
+  {
+    "i": 28,
+    "ticket": "Hình thức đẹp gần giống galaxy s20 untral ,loa to rõ ràng,wife bắt xa ",
+    "label": "{\"screen\": \"positive\", \"features\": \"positive\", \"design\": \"positive\", \"ser_acc\": \"positive\"}",
+    "ft_score": 0.44,
+    "ft_pred": "{\"screen\": \"positive\", \"camera\": \"positive\", \"design\": \"positive\", \"price\": \"neutral\", \"ge",
+    "b_score": 0.75,
+    "b_pred": "{\"design\": \"positive\", \"features\": \"positive\", \"screen\": \"positive\", \"price\": \"neutral\"}",
+    "ft_minus_b": -0.31
+  },
+  {
+    "i": 3,
+    "ticket": "Sản phẩm lúc đầu rất rốt Đc 2 tháng thì sạc đc 75% pin báo đầy k sac n",
+    "label": "{\"battery\": \"negative\", \"general\": \"positive\"}",
+    "ft_score": 0.4,
+    "ft_pred": "{\"battery\": \"negative\", \"performance\": \"neutral\", \"general\": \"negative\"}",
+    "b_score": 0.67,
+    "b_pred": "{\"battery\": \"negative\"}",
+    "ft_minus_b": -0.27
+  },
+  {
+    "i": 14,
+    "ticket": "E mua tầm hơn tháng , thấy sài khá ok , pin e sài tận 2 ngày do e k ch",
+    "label": "{\"battery\": \"positive\", \"general\": \"positive\"}",
+    "ft_score": 0.8,
+    "ft_pred": "{\"battery\": \"positive\", \"performance\": \"neutral\", \"general\": \"positive\"}",
+    "b_score": 1.0,
+    "b_pred": "{\"battery\": \"positive\", \"general\": \"positive\"}",
+    "ft_minus_b": -0.2
+  },
+  {
+    "i": 36,
+    "ticket": "Mới mua nên chưa có cảm nhận gì nhiều. Thấy cũng ổn. Chị nhân viên tên",
+    "label": "{\"general\": \"neutral\", \"ser_acc\": \"positive\"}",
+    "ft_score": 0.8,
+    "ft_pred": "{\"features\": \"neutral\", \"ser_acc\": \"positive\", \"general\": \"neutral\"}",
+    "b_score": 1.0,
+    "b_pred": "{\"general\": \"neutral\", \"ser_acc\": \"positive\"}",
+    "ft_minus_b": -0.2
+  },
+  {
+    "i": 0,
+    "ticket": "Tuyệt vời ông mặt trời, phân khúc này chỉ có mỗi con này có bút. Samsu",
+    "label": "{\"general\": \"positive\", \"ser_acc\": \"positive\"}",
+    "ft_score": 0.5,
+    "ft_pred": "{\"features\": \"positive\", \"general\": \"positive\"}",
+    "b_score": 0.67,
+    "b_pred": "{\"general\": \"positive\"}",
+    "ft_minus_b": -0.17
+  },
+  {
+    "i": 12,
+    "ticket": "Mới mua còn này hôm qua. hài lòng về nhân viên phục vụ.chế độ bh tốt.c",
+    "label": "{\"ser_acc\": \"positive\"}",
+    "ft_score": 0.5,
+    "ft_pred": "{\"features\": \"neutral\", \"general\": \"positive\", \"ser_acc\": \"positive\"}",
+    "b_score": 0.67,
+    "b_pred": "{\"ser_acc\": \"positive\", \"general\": \"neutral\"}",
+    "ft_minus_b": -0.17
+  },
+  {
+    "i": 25,
+    "ticket": "Hiệu quả Thực tế Không tương thích với cấu hình của máy. Tính năng hạn",
+    "label": "{\"performance\": \"negative\"}",
+    "ft_score": 0.5,
+    "ft_pred": "{\"performance\": \"negative\", \"features\": \"negative\", \"general\": \"negative\"}",
+    "b_score": 0.67,
+    "b_pred": "{\"performance\": \"negative\", \"features\": \"negative\"}",
+    "ft_minus_b": -0.17
+  },
+  {
+    "i": 31,
+    "ticket": "Sản phẩm tốt, khi mua đt các bạn hãy ưu tiên Vsmart, khi hãng có tiền ",
+    "label": "{\"general\": \"positive\", \"ser_acc\": \"positive\"}",
+    "ft_score": 0.5,
+    "ft_pred": "{\"features\": \"positive\", \"general\": \"positive\"}",
+    "b_score": 0.67,
+    "b_pred": "{\"general\": \"positive\"}",
+    "ft_minus_b": -0.17
+  },
+  {
+    "i": 42,
+    "ticket": "Máy xài từ lúc ra tới nay rất ok. Trc có xài sam sung mà n chậm rất là",
+    "label": "{\"general\": \"positive\", \"ser_acc\": \"positive\"}",
+    "ft_score": 0.5,
+    "ft_pred": "{\"performance\": \"positive\", \"general\": \"positive\"}",
+    "b_score": 0.67,
+    "b_pred": "{\"general\": \"positive\"}",
+    "ft_minus_b": -0.17
+  },
+  {
+    "i": 5,
+    "ticket": "máy rất tốt, nhân viên siêu nhiệt tình, giá như vậy mà được con điện t",
+    "label": "{\"price\": \"positive\", \"general\": \"positive\", \"ser_acc\": \"positive\"}",
+    "ft_score": 0.86,
+    "ft_pred": "{\"features\": \"positive\", \"price\": \"positive\", \"general\": \"positive\", \"ser_acc\": \"positive\"",
+    "b_score": 1.0,
+    "b_pred": "{\"general\": \"positive\", \"ser_acc\": \"positive\", \"price\": \"positive\"}",
+    "ft_minus_b": -0.14
+  },
+  {
+    "i": 13,
+    "ticket": "Pin rất lâu. Sóng khỏe. Loa rất to. Đèn pin rất sáng. Nghe radio k cần",
+    "label": "{\"features\": \"positive\", \"battery\": \"positive\", \"general\": \"positive\"}",
+    "ft_score": 0.86,
+    "ft_pred": "{\"battery\": \"positive\", \"features\": \"positive\", \"general\": \"positive\", \"ser_acc\": \"negativ",
+    "b_score": 1.0,
+    "b_pred": "{\"battery\": \"positive\", \"features\": \"positive\", \"general\": \"positive\"}",
+    "ft_minus_b": -0.14
+  },
+  {
+    "i": 19,
+    "ticket": "Sản phẩm ip 7plus Thiết kế đẹp, sang trọng, đẳng cấp, chụp ảnh tuyệt v",
+    "label": "{\"camera\": \"positive\", \"performance\": \"positive\", \"design\": \"positive\"}",
+    "ft_score": 0.86,
+    "ft_pred": "{\"camera\": \"positive\", \"design\": \"positive\", \"performance\": \"positive\", \"general\": \"positi",
+    "b_score": 1.0,
+    "b_pred": "{\"design\": \"positive\", \"camera\": \"positive\", \"performance\": \"positive\"}",
+    "ft_minus_b": -0.14
+  },
+  {
+    "i": 49,
+    "ticket": "Quá tuyệt vời tôi rất thích dùng đt oppo này Vì pin trâu bộ nhớ cao ra",
+    "label": "{\"battery\": \"positive\", \"performance\": \"positive\", \"storage\": \"positive\", \"general\": \"positive\"}",
+    "ft_score": 0.86,
+    "ft_pred": "{\"battery\": \"positive\", \"performance\": \"positive\", \"general\": \"positive\"}",
+    "b_score": 1.0,
+    "b_pred": "{\"performance\": \"positive\", \"battery\": \"positive\", \"storage\": \"positive\", \"general\": \"posi",
+    "ft_minus_b": -0.14
+  },
+  {
+    "i": 20,
+    "ticket": "Camera chước màu ko dc sắc nét mầu hỏi nhất.sém phim hd.soay mình hình",
+    "label": "{\"screen\": \"negative\", \"camera\": \"negative\", \"battery\": \"negative\"}",
+    "ft_score": 0.67,
+    "ft_pred": "{\"camera\": \"negative\", \"battery\": \"negative\", \"general\": \"negative\"}",
+    "b_score": 0.8,
+    "b_pred": "{\"camera\": \"negative\", \"battery\": \"negative\"}",
+    "ft_minus_b": -0.13
+  },
+  {
+    "i": 33,
+    "ticket": "Mới mua mà Pin 4500 mà hao quá nhanh. Để qua đêm bay mất 4% trong khi ",
+    "label": "{\"battery\": \"negative\", \"performance\": \"neutral\", \"general\": \"positive\"}",
+    "ft_score": 0.67,
+    "ft_pred": "{\"battery\": \"negative\", \"performance\": \"neutral\", \"general\": \"neutral\"}",
+    "b_score": 0.8,
+    "b_pred": "{\"battery\": \"negative\", \"performance\": \"neutral\"}",
+    "ft_minus_b": -0.13
+  },
+  {
+    "i": 26,
+    "ticket": "sản phẩm xài rất là bền luôn, máy thì mượt và êm, chỉ có cái hơi mau n",
+    "label": "{\"features\": \"positive\", \"performance\": \"neutral\", \"general\": \"positive\"}",
+    "ft_score": 0.29,
+    "ft_pred": "{\"battery\": \"neutral\", \"performance\": \"positive\", \"general\": \"positive\", \"ser_acc\": \"posit",
+    "b_score": 0.33,
+    "b_pred": "{\"performance\": \"positive\", \"design\": \"positive\", \"performance\": \"negative\", \"general\": \"p",
+    "ft_minus_b": -0.05
+  },
+  {
+    "i": 2,
+    "ticket": "Nhanh hao pin, không làm gì cũng hao, làm sao để hiển thị thông báo tr",
+    "label": "{\"battery\": \"negative\", \"performance\": \"neutral\"}",
+    "ft_score": 0.5,
+    "ft_pred": "{\"battery\": \"negative\", \"features\": \"negative\"}",
+    "b_score": 0.5,
+    "b_pred": "{\"battery\": \"negative\", \"screen\": \"neutral\"}",
+    "ft_minus_b": 0.0
+  },
+  {
+    "i": 6,
+    "ticket": "Máy thường có lỗi màn đen, chỉnh sáng thấp bị ám xanh lá. Nên cân nhắc",
+    "label": "{\"screen\": \"negative\", \"general\": \"neutral\"}",
+    "ft_score": 0.5,
+    "ft_pred": "{\"screen\": \"negative\", \"general\": \"negative\"}",
+    "b_score": 0.5,
+    "b_pred": "{\"screen\": \"negative\", \"general\": \"negative\"}",
+    "ft_minus_b": 0.0
+  },
+  {
+    "i": 7,
+    "ticket": "Sao có những lúc vào liên quân thì đơ 1 lúc phải khởi động lại mới sử ",
+    "label": "{\"performance\": \"negative\"}",
+    "ft_score": 1.0,
+    "ft_pred": "{\"performance\": \"negative\"}",
+    "b_score": 1.0,
+    "b_pred": "{\"performance\": \"negative\"}",
+    "ft_minus_b": 0.0
+  },
+  {
+    "i": 15,
+    "ticket": "Máy rất tốt, chơi game OK, lướt web hoặc FB rất mượt, rất đáng với giá",
+    "label": "{\"performance\": \"positive\", \"price\": \"positive\", \"general\": \"positive\"}",
+    "ft_score": 1.0,
+    "ft_pred": "{\"performance\": \"positive\", \"price\": \"positive\", \"general\": \"positive\"}",
+    "b_score": 1.0,
+    "b_pred": "{\"performance\": \"positive\", \"price\": \"positive\", \"general\": \"positive\"}",
+    "ft_minus_b": 0.0
+  },
+  {
+    "i": 16,
+    "ticket": "Máy dùng ổn pin trâu game mượt loa to mà màn hình lớn quá nhiều ứng dụ",
+    "label": "{\"screen\": \"positive\", \"features\": \"positive\", \"battery\": \"positive\", \"performance\": \"neutral\", \"general\": \"positive\"}",
+    "ft_score": 0.22,
+    "ft_pred": "{\"battery\": \"positive\", \"performance\": \"positive\", \"general\": \"negative\", \"ser_acc\": \"neut",
+    "b_score": 0.22,
+    "b_pred": "{\"performance\": \"positive\", \"battery\": \"positive\", \"screen\": \"neutral\", \"features\": \"neutr",
+    "ft_minus_b": 0.0
+  },
+  {
+    "i": 21,
+    "ticket": "Máy xài mượt Pin trâu Chơi game ổn Chụp ảnh khá đẹp Giá cả hợp lý Nói ",
+    "label": "{\"camera\": \"positive\", \"battery\": \"positive\", \"performance\": \"positive\", \"price\": \"positive\", \"ser_acc\": \"positive\"}",
+    "ft_score": 0.8,
+    "ft_pred": "{\"camera\": \"positive\", \"performance\": \"positive\", \"battery\": \"positive\", \"price\": \"positiv",
+    "b_score": 0.8,
+    "b_pred": "{\"performance\": \"positive\", \"battery\": \"positive\", \"camera\": \"positive\", \"price\": \"positiv",
+    "ft_minus_b": 0.0
+  },
+  {
+    "i": 22,
+    "ticket": "Sản phẩm kém chất lượng.pin quá yếu so với thông số 5000mAh Lần đầu dù",
+    "label": "{\"battery\": \"negative\", \"general\": \"negative\", \"ser_acc\": \"negative\"}",
+    "ft_score": 0.8,
+    "ft_pred": "{\"battery\": \"negative\", \"general\": \"negative\"}",
+    "b_score": 0.8,
+    "b_pred": "{\"battery\": \"negative\", \"general\": \"negative\"}",
+    "ft_minus_b": 0.0
+  },
+  {
+    "i": 24,
+    "ticket": "tất cả đều OK nhưng sóng hơi yếu ở ngay cột sóng mà có được 2 cột sóng",
+    "label": "{\"features\": \"negative\", \"general\": \"positive\"}",
+    "ft_score": 0.0,
+    "ft_pred": "{\"features\": \"positive\", \"performance\": \"negative\"}",
+    "b_score": 0.0,
+    "b_pred": "{\"features\": \"neutral\"}",
+    "ft_minus_b": 0.0
+  },
+  {
+    "i": 27,
+    "ticket": "Sử dụng máy được 6 tháng. Sản phẩm khá ổn. Vân tay nhạy, cảm ứng mượt.",
+    "label": "{\"features\": \"positive\", \"battery\": \"negative\", \"performance\": \"neutral\", \"general\": \"positive\"}",
+    "ft_score": 0.75,
+    "ft_pred": "{\"features\": \"positive\", \"performance\": \"negative\", \"battery\": \"negative\", \"general\": \"pos",
+    "b_score": 0.75,
+    "b_pred": "{\"general\": \"positive\", \"features\": \"positive\", \"performance\": \"negative\", \"battery\": \"neg",
+    "ft_minus_b": 0.0
+  },
+  {
+    "i": 37,
+    "ticket": "màn hình sắc nét, pin trâu, chíp khoẻ, hình thức máy đẹp. Vivo s1 Pro ",
+    "label": "{\"screen\": \"positive\", \"battery\": \"positive\", \"performance\": \"positive\", \"design\": \"positive\", \"general\": \"positive\"}",
+    "ft_score": 1.0,
+    "ft_pred": "{\"screen\": \"positive\", \"battery\": \"positive\", \"performance\": \"positive\", \"design\": \"positi",
+    "b_score": 1.0,
+    "b_pred": "{\"screen\": \"positive\", \"battery\": \"positive\", \"performance\": \"positive\", \"design\": \"positi",
+    "ft_minus_b": 0.0
+  },
+  {
+    "i": 39,
+    "ticket": "Mình mua đc 4 tháng pin vẫn 100% máy mượt pin trâu chụp ảnh đẹp chơi g",
+    "label": "{\"camera\": \"positive\", \"battery\": \"positive\", \"performance\": \"positive\", \"general\": \"positive\"}",
+    "ft_score": 1.0,
+    "ft_pred": "{\"battery\": \"positive\", \"performance\": \"positive\", \"camera\": \"positive\", \"general\": \"posit",
+    "b_score": 1.0,
+    "b_pred": "{\"battery\": \"positive\", \"performance\": \"positive\", \"camera\": \"positive\", \"general\": \"posit",
+    "ft_minus_b": 0.0
+  },
+  {
+    "i": 41,
+    "ticket": "Sử dụng được 5 tháng hỏng sạc, pin 4000mAh mà như 3000, không sd cung ",
+    "label": "{\"battery\": \"negative\", \"performance\": \"negative\", \"general\": \"negative\"}",
+    "ft_score": 1.0,
+    "ft_pred": "{\"battery\": \"negative\", \"performance\": \"negative\", \"general\": \"negative\"}",
+    "b_score": 1.0,
+    "b_pred": "{\"battery\": \"negative\", \"performance\": \"negative\", \"general\": \"negative\"}",
+    "ft_minus_b": 0.0
+  },
+  {
+    "i": 44,
+    "ticket": "Điện thoại k hiểu tại sao màng hình rộng v mà xem ảnh trên face hay bấ",
+    "label": "{\"screen\": \"negative\"}",
+    "ft_score": 1.0,
+    "ft_pred": "{\"screen\": \"negative\"}",
+    "b_score": 1.0,
+    "b_pred": "{\"screen\": \"negative\"}",
+    "ft_minus_b": 0.0
+  },
+  {
+    "i": 45,
+    "ticket": "Máy này nói chung là tốt... nhưng chuông và âm thanh và youtube .và âm",
+    "label": "{\"features\": \"negative\", \"general\": \"positive\"}",
+    "ft_score": 1.0,
+    "ft_pred": "{\"features\": \"negative\", \"general\": \"positive\"}",
+    "b_score": 1.0,
+    "b_pred": "{\"general\": \"positive\", \"features\": \"negative\"}",
+    "ft_minus_b": 0.0
+  },
+  {
+    "i": 48,
+    "ticket": "Chơi games lag lướt web cũng giật lag 1 điều kiện là pin trâu màn hình",
+    "label": "{\"battery\": \"positive\", \"performance\": \"negative\", \"design\": \"positive\"}",
+    "ft_score": 0.57,
+    "ft_pred": "{\"performance\": \"negative\", \"battery\": \"positive\", \"display\": \"positive\", \"general\": \"neut",
+    "b_score": 0.57,
+    "b_pred": "{\"performance\": \"negative\", \"battery\": \"positive\", \"screen\": \"positive\", \"general\": \"negat",
+    "ft_minus_b": 0.0
+  },
+  {
+    "i": 38,
+    "ticket": "Màn hình 90hz phải gọi là siêu mượt =)) Sạc Siêu Nhanh Pin Chỉ Gọi Là ",
+    "label": "{\"screen\": \"positive\", \"camera\": \"neutral\", \"battery\": \"positive\", \"general\": \"positive\", \"ser_acc\": \"positive\"}",
+    "ft_score": 0.67,
+    "ft_pred": "{\"screen\": \"positive\", \"battery\": \"neutral\", \"camera\": \"neutral\", \"design\": \"positive\", \"p",
+    "b_score": 0.6,
+    "b_pred": "{\"screen\": \"positive\", \"battery\": \"neutral\", \"camera\": \"neutral\", \"design\": \"positive\", \"s",
+    "ft_minus_b": 0.07
+  },
+  {
+    "i": 18,
+    "ticket": "Mua cũng được gần 1tuaan sài khá ổn, dung lượng cao, pin sài khá lâu m",
+    "label": "{\"battery\": \"positive\", \"general\": \"positive\"}",
+    "ft_score": 0.8,
+    "ft_pred": "{\"battery\": \"positive\", \"performance\": \"neutral\", \"general\": \"positive\"}",
+    "b_score": 0.67,
+    "b_pred": "{\"general\": \"positive\", \"storage\": \"positive\", \"battery\": \"positive\", \"features\": \"neutral",
+    "ft_minus_b": 0.13
+  },
+  {
+    "i": 40,
+    "ticket": "Đã cho mẹ sử dụng 3 2 ngày còn 50% pin và có chơi cod và liên quân đượ",
+    "label": "{\"camera\": \"positive\", \"features\": \"negative\", \"battery\": \"positive\", \"performance\": \"positive\", \"ser_acc\": \"positive\"}",
+    "ft_score": 0.55,
+    "ft_pred": "{\"camera\": \"positive\", \"battery\": \"positive\", \"performance\": \"positive\", \"general\": \"posit",
+    "b_score": 0.4,
+    "b_pred": "{\"battery\": \"negative\", \"camera\": \"neutral\", \"features\": \"negative\", \"performance\": \"posit",
+    "ft_minus_b": 0.15
+  },
+  {
+    "i": 4,
+    "ticket": "Máy dùng khá mượt pin trâu chs game ngon ( nếu chs pubg mà dùng gyro t",
+    "label": "{\"camera\": \"negative\", \"battery\": \"positive\", \"performance\": \"positive\"}",
+    "ft_score": 0.86,
+    "ft_pred": "{\"camera\": \"negative\", \"performance\": \"positive\", \"battery\": \"positive\", \"general\": \"posit",
+    "b_score": 0.67,
+    "b_pred": "{\"performance\": \"positive\", \"battery\": \"positive\", \"features\": \"neutral\"}",
+    "ft_minus_b": 0.19
+  },
+  {
+    "i": 35,
+    "ticket": "Con máy này hình như gửi thông tin máy sai thì phải 8g ram mà mình thấ",
+    "label": "{\"battery\": \"negative\", \"performance\": \"negative\", \"general\": \"negative\"}",
+    "ft_score": 0.86,
+    "ft_pred": "{\"camera\": \"negative\", \"battery\": \"negative\", \"performance\": \"negative\", \"general\": \"negat",
+    "b_score": 0.67,
+    "b_pred": "{\"performance\": \"negative\", \"battery\": \"negative\", \"storage\": \"negative\"}",
+    "ft_minus_b": 0.19
+  },
+  {
+    "i": 43,
+    "ticket": "Nhìn máy chắc chắn hơn và đẹp chơi game đồ hoa cao nét nói Chung chụp ",
+    "label": "{\"camera\": \"positive\", \"performance\": \"positive\", \"design\": \"positive\"}",
+    "ft_score": 0.86,
+    "ft_pred": "{\"camera\": \"positive\", \"performance\": \"positive\", \"design\": \"positive\", \"general\": \"positi",
+    "b_score": 0.67,
+    "b_pred": "{\"design\": \"positive\", \"performance\": \"positive\", \"camera\": \"neutral\"}",
+    "ft_minus_b": 0.19
+  },
+  {
+    "i": 8,
+    "ticket": "Đã mua máy được 10 ngày, và đây là chiếc máy đầu tiên của cửa hàng ở k",
+    "label": "{\"performance\": \"positive\", \"general\": \"positive\"}",
+    "ft_score": 1.0,
+    "ft_pred": "{\"performance\": \"positive\", \"general\": \"positive\"}",
+    "b_score": 0.8,
+    "b_pred": "{\"ser_acc\": \"neutral\", \"performance\": \"positive\", \"general\": \"positive\"}",
+    "ft_minus_b": 0.2
+  },
+  {
+    "i": 17,
+    "ticket": "Máy dùng rất ổn, nhưng chơi ff không đc nhạy cho lắm, khá ổn rất đáng ",
+    "label": "{\"performance\": \"negative\", \"price\": \"positive\", \"general\": \"positive\"}",
+    "ft_score": 1.0,
+    "ft_pred": "{\"performance\": \"negative\", \"general\": \"positive\", \"price\": \"positive\"}",
+    "b_score": 0.67,
+    "b_pred": "{\"performance\": \"neutral\", \"price\": \"positive\", \"general\": \"positive\"}",
+    "ft_minus_b": 0.33
+  },
+  {
+    "i": 11,
+    "ticket": "Sản phẩm đẹp, rễ sử dụng, rất tốt, nhân viên giao hàng thế giới Di Độn",
+    "label": "{\"general\": \"positive\", \"ser_acc\": \"positive\"}",
+    "ft_score": 0.8,
+    "ft_pred": "{\"features\": \"positive\", \"ser_acc\": \"positive\", \"general\": \"positive\"}",
+    "b_score": 0.4,
+    "b_pred": "{\"design\": \"positive\", \"ser_acc\": \"positive\", \"general\": \"neutral\"}",
+    "ft_minus_b": 0.4
+  },
+  {
+    "i": 1,
+    "ticket": "Sao máy sạt khá nóng mặt dù kh bật mạng không bật wifi .. mới có 48 % ",
+    "label": "{\"battery\": \"negative\"}",
+    "ft_score": 0.67,
+    "ft_pred": "{\"battery\": \"negative\", \"performance\": \"negative\"}",
+    "b_score": 0.0,
+    "b_pred": "{\"performance\": \"negative\"}",
+    "ft_minus_b": 0.67
+  },
+  {
+    "i": 23,
+    "ticket": "Rất ổn, để test thêm vài tuần xem sao. Nghe đâu con này rất hot nên qu",
+    "label": "{\"general\": \"positive\"}",
+    "ft_score": 0.67,
+    "ft_pred": "{\"features\": \"positive\", \"general\": \"positive\"}",
+    "b_score": 0.0,
+    "b_pred": "{\"general\": \"neutral\"}",
+    "ft_minus_b": 0.67
+  },
+  {
+    "i": 34,
+    "ticket": "Máy ngón mà các bạn.khi mua a e chọn kỹ 1 tý.mình dùng mọi thứ vẫn OK ",
+    "label": "{\"general\": \"positive\"}",
+    "ft_score": 0.67,
+    "ft_pred": "{\"features\": \"positive\", \"general\": \"positive\"}",
+    "b_score": 0.0,
+    "b_pred": "{\"general\": \"neutral\"}",
+    "ft_minus_b": 0.67
+  }
+]
