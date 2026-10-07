@@ -1,0 +1,10 @@
+{
+  "mask_mode": "assistant-only",
+  "n_supervised": 23,
+  "n_total": 117,
+  "supervised_fraction": 0.1966,
+  "answer_is_supervised": true,
+  "question_is_masked": true,
+  "supervised_preview": "</think>\n\n{\"features\": \"positive\", \"battery\": \"positive\", \"ser_acc\": \"positive\"}<|im_end|>\n",
+  "masked_preview": "<|im_start|>system\nPhân tích đánh giá sản phẩm sau.<|im_end|>\n<|im_start|>user\nMới mua hôm qua rất hài lòng về hãng này.đầy đủ các tính năng tôi cần như: nghe gọi to rõ, tự động ghi âm cuộc gọi, phông chữ to rõ, pin dung lượng lớn bàn phím dễ bấm, có chức năng hạn chế thời gian gọi.cảm ơn tgdđ đã gi"
+}
